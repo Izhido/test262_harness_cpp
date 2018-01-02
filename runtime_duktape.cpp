@@ -24,42 +24,48 @@ namespace test262_harness_cpp
             return true;
         }
 
-        bool timeout_hit = false;
-        
         auto pos_1 = file.find("built-ins");
         if (pos_1 != std::string::npos)
         {
-            auto pos_2 = file.find("Array", pos_1);
-            if (pos_2 != std::string::npos)
-            {
-                auto pos_3 = file.find("prototype", pos_2);
-                if (pos_3 != std::string::npos)
-                {
-                    auto pos_4 = file.find("unshift", pos_3);
-                    if (pos_4 != std::string::npos)
-                    {
-                        auto pos_5 = file.find("length-near-integer-limit.js", pos_4);
-                        if (pos_5 != std::string::npos)
-                        {
-                            timeout_hit = true;
-                        }
-                        pos_5 = file.find("clamps-to-integer-limit.js", pos_4);
-                        if (pos_5 != std::string::npos)
-                        {
-                            timeout_hit = true;
-                        }
-                    }
-                }
-            }
-        }
-        
-        if (timeout_hit)
-        {
-            error_description = "This test does not return in a timely manner.";
-            
-            return false;
-        }
+			auto pos_2 = file.find("Array", pos_1);
+			if (pos_2 != std::string::npos)
+			{
+				auto pos_3 = file.find("prototype", pos_2);
+				if (pos_3 != std::string::npos)
+				{
+					auto pos_4 = file.find("unshift", pos_3);
+					if (pos_4 != std::string::npos)
+					{
+						auto pos_5 = file.find("length-near-integer-limit.js", pos_4);
+						if (pos_5 != std::string::npos)
+						{
+							error_description = "This test does not return in a timely manner in MacOS.";
 
+							return false;
+						}
+						pos_5 = file.find("clamps-to-integer-limit.js", pos_4);
+						if (pos_5 != std::string::npos)
+						{
+							error_description = "This test does not return in a timely manner in MacOS.";
+
+							return false;
+						}
+					}
+				}
+			}
+			pos_2 = file.find("RegExp", pos_1);
+			if (pos_2 != std::string::npos)
+			{
+				auto pos_3 = file.find("S15.10.2.5_A1_T5.js", pos_2);
+				if (pos_3 != std::string::npos)
+				{
+					error_description = "This test causes an stack overflow in Windows.";
+
+					return false;
+				}
+			}
+		}
+        
         evaluation_description.clear();
         
         try
