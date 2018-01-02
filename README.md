@@ -40,18 +40,18 @@ Included with test262_harness_cpp is an Xcode 8.2 project that includes the main
 To create the command-line application using the supplied components:
 
 MacOS:
-* Rename directories_posix.h / .cpp in the project folder to directories.h / .cpp
-* Rename runtime_duktape.h / .cpp, or runtime_tinyjs.h / .cpp or runtime_42tinyjs.h / .cpp (depending on the Javascript / ECMAScript engine you chose to run the tests) to runtime.h / .cpp
-* Open the test262_harness_cpp project by using Xcode 8.2 or later
-* Include all the renamed .h / .cpp files into the newly opened project
-* Include the source code files of the engine you chose into the project
+* Rename directories_posix.h / .cpp in the project folder to directories.h / .cpp .
+* Rename runtime_duktape.h / .cpp, or runtime_tinyjs.h / .cpp or runtime_42tinyjs.h / .cpp (depending on the Javascript / ECMAScript engine you chose to run the tests) to runtime.h / .cpp .
+* Open the test262_harness_cpp project by using Xcode 8.2 or later.
+* Include all the renamed .h / .cpp files into the newly opened project.
+* Include the source code files of the engine you chose into the project.
 * Build the project (either by using Project / Build or clicking on the Run button in Xcode.)
 
 Other platforms:
-* Create a copy of directories_posix.h / .cpp and provide a suitable implementation for your platform if it's not POSIX-compliant already, and rename it to directories.h / .cpp
-* Rename runtime_duktape.h / .cpp, or runtime_tinyjs.h / .cpp or runtime_42tinyjs.h / .cpp (depending on the Javascript / ECMAScript engine you chose to run the tests) to runtime.h / .cpp
+* Create a copy of directories_posix.h / .cpp and provide a suitable implementation for your platform if it's not POSIX-compliant already, and rename it to directories.h / .cpp .
+* Rename runtime_duktape.h / .cpp, or runtime_tinyjs.h / .cpp or runtime_42tinyjs.h / .cpp (depending on the Javascript / ECMAScript engine you chose to run the tests) to runtime.h / .cpp .
 * Include the files harness.h / .cpp, metadata.h / .cpp, main.cpp, and all copied / renamed files into your build system.
-* Include the source code or libraries of the Javascript / ECMAScript engine you chose into the build ssystem
+* Include the source code or libraries of the Javascript / ECMAScript engine you chose into the build system.
 * Invoke the build command of your build system.
 
 Licensing
