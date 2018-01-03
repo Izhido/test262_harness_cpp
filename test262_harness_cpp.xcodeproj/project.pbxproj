@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28C09C921FFC866600C8AF62 /* directories_posix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28C09C911FFC866600C8AF62 /* directories_posix.cpp */; };
 		28D0E5A81FF73936002EA162 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28D0E5A71FF73936002EA162 /* main.cpp */; };
 		28D0E5B01FF73ACE002EA162 /* harness.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28D0E5AF1FF73ACE002EA162 /* harness.cpp */; };
 		28EE8EE61FF8923B002C0056 /* metadata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28EE8EE41FF8923B002C0056 /* metadata.cpp */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28C09C901FFC865200C8AF62 /* directories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = directories.h; sourceTree = "<group>"; };
+		28C09C911FFC866600C8AF62 /* directories_posix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = directories_posix.cpp; sourceTree = "<group>"; };
 		28D0E5A41FF73936002EA162 /* test262_harness_cpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test262_harness_cpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D0E5A71FF73936002EA162 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		28D0E5AE1FF73AB2002EA162 /* harness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = harness.h; sourceTree = "<group>"; };
@@ -47,6 +50,8 @@
 		28D0E59B1FF73936002EA162 = {
 			isa = PBXGroup;
 			children = (
+				28C09C901FFC865200C8AF62 /* directories.h */,
+				28C09C911FFC866600C8AF62 /* directories_posix.cpp */,
 				28D0E5AF1FF73ACE002EA162 /* harness.cpp */,
 				28D0E5AE1FF73AB2002EA162 /* harness.h */,
 				28D0E5A71FF73936002EA162 /* main.cpp */,
@@ -121,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28D0E5B01FF73ACE002EA162 /* harness.cpp in Sources */,
+				28C09C921FFC866600C8AF62 /* directories_posix.cpp in Sources */,
 				28EE8EE61FF8923B002C0056 /* metadata.cpp in Sources */,
 				28D0E5A81FF73936002EA162 /* main.cpp in Sources */,
 			);

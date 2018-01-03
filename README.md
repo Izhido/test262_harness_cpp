@@ -35,22 +35,29 @@ ReferenceError -  identifier 'Symbol' undefined
 Compilation Instructions
 ------------------------
 
-Included with test262_harness_cpp is an Xcode 8.2 project that includes the main components of the test harness. The command-line application can also be compiled for other platforms, provided that you specify an appropriate implementation of directories.h / .cpp for your platform.
+Included with test262_harness_cpp are two projects: an Xcode 8.2 project for MacOS, and a Visual Studio 2017 project for Windows, that include the main components of the test harness. The command-line application can also be compiled for other platforms, provided that you specify a proper implementation of directories.h / .cpp for your platform.
 
 To create the command-line application using the supplied components:
 
 MacOS:
-* Rename directories_posix.h / .cpp in the project folder to directories.h / .cpp .
 * Rename runtime_duktape.h / .cpp, or runtime_tinyjs.h / .cpp or runtime_42tinyjs.h / .cpp (depending on the Javascript / ECMAScript engine you chose to run the tests) to runtime.h / .cpp .
 * Open the test262_harness_cpp project by using Xcode 8.2 or later.
 * Include all the renamed .h / .cpp files into the newly opened project.
 * Include the source code files of the engine you chose into the project.
-* Build the project (either by using Project / Build or clicking on the Run button in Xcode.)
+* Build the project (either by using Product / Build or clicking on the Run button in Xcode.)
+
+Windows:
+* Rename runtime_duktape.h / .cpp, or runtime_tinyjs.h / .cpp or runtime_42tinyjs.h / .cpp (depending on the Javascript / ECMAScript engine you chose to run the tests) to runtime.h / .cpp .
+* Open the test262_harness_cpp solution by using Visual Studio 2017 or later.
+* Include the files directories.h and directories_windows.cpp into the test262_harness_cpp_windows project in the solution.
+* Include all the renamed .h / .cpp files into the project.
+* Include the source code files of the engine you chose into the project.
+* Build the project (either by using Project / Build or clicking on the Start Debugging button in the IDE.)
 
 Other platforms:
-* Create a copy of directories_posix.h / .cpp and provide a suitable implementation for your platform if it's not POSIX-compliant already, and rename it to directories.h / .cpp .
+* Create a copy of the file directories_posix.cpp and provide a suitable implementation for your platform if it's not POSIX-compliant already.
 * Rename runtime_duktape.h / .cpp, or runtime_tinyjs.h / .cpp or runtime_42tinyjs.h / .cpp (depending on the Javascript / ECMAScript engine you chose to run the tests) to runtime.h / .cpp .
-* Include the files harness.h / .cpp, metadata.h / .cpp, main.cpp, and all copied / renamed files into your build system.
+* Include the files harness.h / .cpp, metadata.h / .cpp, main.cpp, directories.h, and all copied / renamed files into your build system.
 * Include the source code or libraries of the Javascript / ECMAScript engine you chose into the build system.
 * Invoke the build command of your build system.
 
