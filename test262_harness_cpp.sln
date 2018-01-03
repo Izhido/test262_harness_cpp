@@ -5,22 +5,40 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test262_harness_cpp_windows", "test262_harness_cpp_windows.vcxproj", "{484A68DC-79A0-4814-8687-A7E5D271DBDE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test262_harness_cpp_linux", "test262_harness_cpp_linux.vcxproj", "{684020CD-CB31-44D9-A1EA-078047B42BE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{484A68DC-79A0-4814-8687-A7E5D271DBDE}.Debug|ARM.ActiveCfg = Debug|Win32
 		{484A68DC-79A0-4814-8687-A7E5D271DBDE}.Debug|x64.ActiveCfg = Debug|x64
 		{484A68DC-79A0-4814-8687-A7E5D271DBDE}.Debug|x64.Build.0 = Debug|x64
 		{484A68DC-79A0-4814-8687-A7E5D271DBDE}.Debug|x86.ActiveCfg = Debug|Win32
 		{484A68DC-79A0-4814-8687-A7E5D271DBDE}.Debug|x86.Build.0 = Debug|Win32
+		{484A68DC-79A0-4814-8687-A7E5D271DBDE}.Release|ARM.ActiveCfg = Release|Win32
 		{484A68DC-79A0-4814-8687-A7E5D271DBDE}.Release|x64.ActiveCfg = Release|x64
 		{484A68DC-79A0-4814-8687-A7E5D271DBDE}.Release|x64.Build.0 = Release|x64
 		{484A68DC-79A0-4814-8687-A7E5D271DBDE}.Release|x86.ActiveCfg = Release|Win32
 		{484A68DC-79A0-4814-8687-A7E5D271DBDE}.Release|x86.Build.0 = Release|Win32
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Debug|ARM.ActiveCfg = Debug|ARM
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Debug|ARM.Build.0 = Debug|ARM
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Debug|x64.ActiveCfg = Debug|x64
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Debug|x64.Build.0 = Debug|x64
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Debug|x86.ActiveCfg = Debug|x86
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Debug|x86.Build.0 = Debug|x86
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Release|ARM.ActiveCfg = Release|ARM
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Release|ARM.Build.0 = Release|ARM
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Release|x64.ActiveCfg = Release|x64
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Release|x64.Build.0 = Release|x64
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Release|x86.ActiveCfg = Release|x86
+		{684020CD-CB31-44D9-A1EA-078047B42BE2}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,6 +3,7 @@
 #include "directories.h"
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 namespace test262_harness_cpp
 {
@@ -25,7 +26,11 @@ namespace test262_harness_cpp
                     {
                         state = 2;
                     }
-                    else
+					else if (argument == "-p")
+					{
+						display_progress = true;
+					}
+					else
                     {
                         throw std::runtime_error("Unrecognized argument: " + argument);
                     }
@@ -93,9 +98,13 @@ namespace test262_harness_cpp
         directories::get_test_files(start_directory, test_files);
         
         tests_read = (int)test_files.size();
+		
+		//auto starting_point_for_debug = 0;
+        
+		for (auto& test_file : test_files)
+		{
+			//starting_point_for_debug++; if (starting_point_for_debug < 11660) continue;
 
-        for (auto& test_file : test_files)
-        {
             std::string test_contents;
             
             read_file(test_file, test_contents);
@@ -120,7 +129,7 @@ namespace test262_harness_cpp
             
             bool test_succeeded;
             
-            if (metadata.no_strict)
+            if (metadata.no_strict || metadata.raw)
             {
                 test_succeeded = evaluate_non_strict_mode(runtime, test_file, metadata, test_contents, results_stream);
             }
@@ -140,6 +149,11 @@ namespace test262_harness_cpp
             {
                 tests_failed++;
             }
+
+			if (display_progress)
+			{
+				std::cout << tests_ran_read_message() << std::endl;
+			}
         }
     }
     

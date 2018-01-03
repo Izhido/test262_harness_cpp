@@ -2,6 +2,7 @@
 #include <dirent.h>
 #include <errno.h>
 #include <stdexcept>
+#include <cstring>
 
 namespace test262_harness_cpp
 {
@@ -103,7 +104,7 @@ namespace test262_harness_cpp
                 break;
             }
             
-            std::string filename(entry->d_name, entry->d_namlen);
+            std::string filename(entry->d_name);
             
             if (filename == "." || filename == "..")
             {

@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="directories_windows.cpp" />
     <ClCompile Include="harness.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="metadata.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="directories.h" />
     <ClInclude Include="harness.h" />
     <ClInclude Include="metadata.h" />
   </ItemGroup>

@@ -26,6 +26,8 @@ namespace test262_harness_cpp
         
         std::string results_file;
         
+		bool display_progress = false;
+
         std::string harness_directory;
         
         std::string assert_file;
