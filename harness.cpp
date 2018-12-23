@@ -221,25 +221,39 @@ namespace test262_harness_cpp
             {
                 auto success = true;
                 
-                for (auto include : metadata.includes)
+                if (metadata.async)
                 {
-                    auto include_file = directories::combine(harness_directory, include);
+                    auto done_print_handle_file = directories::combine(harness_directory, "doneprintHandle.js");
                     
-                    std::string include_contents;
+                    std::string done_print_handle_contents;
                     
-                    read_file(include_file, include_contents);
+                    read_file(done_print_handle_file, done_print_handle_contents);
                     
-                    success = runtime.evaluate(include_file, include_contents, error_type, error_description);
-                    
-                    if (!success)
-                    {
-                        break;
-                    }
+                    success = runtime.evaluate(done_print_handle_file, done_print_handle_contents, error_type, error_description);
                 }
-                
+
                 if (success)
                 {
-                    runtime.evaluate(test_file, prefix + source, error_type, error_description);
+                    for (auto include : metadata.includes)
+                    {
+                        auto include_file = directories::combine(harness_directory, include);
+                        
+                        std::string include_contents;
+                        
+                        read_file(include_file, include_contents);
+                        
+                        success = runtime.evaluate(include_file, include_contents, error_type, error_description);
+                        
+                        if (!success)
+                        {
+                            break;
+                        }
+                    }
+                    
+                    if (success)
+                    {
+                        runtime.evaluate(test_file, prefix + source, error_type, error_description);
+                    }
                 }
             }
         }

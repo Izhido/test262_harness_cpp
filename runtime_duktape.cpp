@@ -1,8 +1,23 @@
 #include "runtime.h"
+#include <iostream>
 
 void test262_harness_cpp_handle_fatal_error(void* udata, const char* msg)
 {
     ((test262_harness_cpp::runtime*)udata)->add_fatal_error(msg);
+}
+
+int test262_harness_cpp_print(duk_context* context)
+{
+    int argument_count = duk_get_top(context);
+    if (argument_count > 0)
+    {
+        const char* argument = duk_to_string(context, 0);
+        if (argument != nullptr)
+        {
+            std::cout << argument << std::endl;
+        }
+    }
+    return 0;
 }
 
 namespace test262_harness_cpp
@@ -15,6 +30,11 @@ namespace test262_harness_cpp
         }
 
         context = duk_create_heap(nullptr, nullptr, nullptr, this, test262_harness_cpp_handle_fatal_error);
+        
+        duk_push_global_object(context);
+        duk_push_c_function(context, test262_harness_cpp_print, DUK_VARARGS);
+        duk_put_prop_string(context, -2, "print");
+        duk_pop(context);
     }
     
     bool runtime::evaluate(std::string& file, std::string source, std::string& error_type, std::string& error_description)
