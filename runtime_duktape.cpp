@@ -90,6 +90,13 @@ namespace test262_harness_cpp
 
 					return false;
 				}
+				pos_3 = file.find("S15.10.2.8_A3_T15.js", pos_2);
+				if (pos_3 != std::string::npos)
+				{
+					error_description = "This test causes an stack overflow in Windows.";
+
+					return false;
+				}
 			}
 		}
         
